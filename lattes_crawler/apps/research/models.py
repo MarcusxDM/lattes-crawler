@@ -26,7 +26,7 @@ class ResearchInfo(models.Model):
     '''
     research    = models.ForeignKey('research')
     description = models.TextField(blank=True)
-    year        = models.PositiveIntegerField(blank=True)
+    year        = models.PositiveIntegerField(blank=True, null=True)
     data_type   = models.CharField(max_length = 50, blank = True)
     
     
