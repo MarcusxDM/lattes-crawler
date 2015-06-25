@@ -74,10 +74,13 @@ def extract_information(research):
         print "\nProjetos:\n"
     
         for proj in projetos:
+            nome                          = None
             if proj.getElementsByTagName("nome")[0].firstChild is not None:
                 nome                      = proj.getElementsByTagName("nome")[0].firstChild.data
+            projeto_ano_inicio            = None
             if proj.getElementsByTagName("ano_inicio")[0].firstChild is not None:
                 projeto_ano_inicio        = proj.getElementsByTagName("ano_inicio")[0].firstChild.data
+            projeto_ano_conclusao         = None
             if proj.getElementsByTagName("ano_conclusao")[0].firstChild is not None:
                 projeto_ano_conclusao     = proj.getElementsByTagName("ano_conclusao")[0].firstChild.data
     
@@ -91,8 +94,10 @@ def extract_information(research):
         print"\nLivros:\n"
     
         for cap in capitulo:
+            titulo_livro                  = None
             if cap.getElementsByTagName("titulo")[0].firstChild is not None:
                 titulo_livro              = cap.getElementsByTagName("titulo")[0].firstChild.data
+            ano_livro                     = None
             if cap.getElementsByTagName("ano")[0].firstChild is not None:
                 ano_livro                 = cap.getElementsByTagName("ano")[0].firstChild.data
             
@@ -106,8 +111,10 @@ def extract_information(research):
         print"\nTexto em Jornals:\n"
     
         for text in texto:
+            titulo_text                   = None
             if text.getElementsByTagName("titulo")[0].firstChild is not None:
                 titulo_text               = text.getElementsByTagName("titulo")[0].firstChild.data
+            ano                           = None
             if text.getElementsByTagName("ano")[0].firstChild is not None:
                 ano                       = text.getElementsByTagName("ano")[0].firstChild.data
     
@@ -121,8 +128,10 @@ def extract_information(research):
         print"\nPapers:\n"
     
         for trabalho in trabalho_completo:
+            titulo_trabalho     = None
             if trabalho.getElementsByTagName("titulo")[0].firstChild is not None:
                 titulo_trabalho = trabalho.getElementsByTagName("titulo")[0].firstChild.data
+            ano_trabalho        = None
             if trabalho.getElementsByTagName("ano")[0].firstChild is not None:
                 ano_trabalho    = trabalho.getElementsByTagName("ano")[0].firstChild.data
     
@@ -136,9 +145,11 @@ def extract_information(research):
         print"\nResumos expandidos:\n"
     
         for resumo in resumo_expandido:
+            titulo_resumo_expandido              = None
             if resumo.getElementsByTagName("titulo")[0].firstChild is not None:
                 titulo_resumo_expandido          = resumo.getElementsByTagName("titulo")[0].firstChild.data
             #nome_evento_resumo_expandido     = resumo.getElementsByTagName("nome_evento")[0].firstChild.data
+            ano_resumo_expandido                 = None
             if resumo.getElementsByTagName("ano")[0].firstChild is not None:
                 ano_resumo_expandido             = resumo.getElementsByTagName("ano")[0].firstChild.data
             
@@ -152,10 +163,13 @@ def extract_information(research):
         print"\nResumos:\n"
         
         for r in resum:
+            titulo_resumo          = None
             if r.getElementsByTagName("titulo")[0].firstChild is not None:
                 titulo_resumo      = r.getElementsByTagName("titulo")[0].firstChild.data
+            nome_evento_resumo     = None
             if r.getElementsByTagName("nome_evento")[0].firstChild is not None:
                 nome_evento_resumo = r.getElementsByTagName("nome_evento")[0].firstChild.data
+            ano_resumo             = None
             if r.getElementsByTagName("ano")[0].firstChild:
                 ano_resumo             = r.getElementsByTagName("ano")[0].firstChild.data
             
@@ -169,8 +183,10 @@ def extract_information(research):
         print"\nTrabalhos Apresentados:\n"
     
         for trab in trabalho_apresentado:
+            titulo_trabalho_apresentado         = None
             if trab.getElementsByTagName("titulo")[0].firstChild is not None:
                 titulo_trabalho_apresentado     = trab.getElementsByTagName("titulo")[0].firstChild.data
+            ano_trabalho_apresentado            = None
             if trab.getElementsByTagName("ano")[0].firstChild is not None:
                 ano_trabalho_apresentado        = trab.getElementsByTagName("ano")[0].firstChild.data
     
@@ -190,7 +206,5 @@ def main():
         
 if __name__ == '__main__':
     main()
-    #research = Research.objects.get(lattes_id = "6160004433931781")
-    #extract_information(research)
     
     
